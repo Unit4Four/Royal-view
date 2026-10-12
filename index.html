@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en" class="is-locked">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>The Royal View | Luxury Holiday Villa in Linstead, Jamaica</title>
+<meta name="description" content="The Royal View: a newly built 3 bedroom, 3 bathroom holiday home in Hillview Estate, Linstead, St Catherine, Jamaica. Sleeps 8, fully air conditioned, with views of the hills. Book direct.">
+<meta property="og:title" content="The Royal View | Your Jamaican Getaway Awaits">
+<meta property="og:description" content="Newly built 3 bed, 3 bath holiday home in Linstead, Jamaica. 30 minutes to Ocho Rios and Kingston.">
+<meta property="og:image" content="royalview-assets/exterior-golden-hour.jpg">
+<meta name="theme-color" content="#0c0c0c">
+<link rel="icon" href="royalview-assets/logo.png">
+<link rel="preload" as="image" href="royalview-assets/frames/lg/000.webp" media="(min-aspect-ratio: 9/10)">
+<link rel="preload" as="image" href="royalview-assets/frames/pt/000.webp" media="(max-aspect-ratio: 9/10)">
+<link rel="preload" as="image" href="royalview-assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0c0c0c;
+  --charcoal:#161514;
+  --charcoal-2:#211f1d;
+  --cream:#faf6ef;
+  --cream-2:#f3ecdf;
+  --white:#ffffff;
+  --gold:#c9a24b;
+  --gold-light:#e2c27a;
+  --gold-dark:#94722a;
+  --ink:#2a2622;
+  --muted:#62594f;
+  --line:rgba(201,162,75,.35);
+  --serif:'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --sans:'Jost', 'Helvetica Neue', Arial, sans-serif;
+  --nav-h:84px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --film-len:620vh;
+  --safe-b:env(safe-area-inset-bottom, 0px);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) - 1px);-webkit-text-size-adjust:100%}
+html.is-locked{overflow:hidden}
+body{font-family:var(--sans);font-weight:300;color:var(--ink);background:var(--black);line-height:1.75;font-size:1.0625rem;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+main,footer{overflow-x:clip}
+img,video,iframe,canvas{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;cursor:pointer;color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spacing:.01em}
+.container{width:min(1200px,100% - 48px);margin-inline:auto}
+.content{background:var(--cream);position:relative;z-index:2}
+.section{padding:clamp(88px,12vw,160px) 0}
+.section--alt{background:var(--cream-2)}
+.section--dark{background:var(--charcoal);color:var(--cream)}
+
+/* Section headings */
+.eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:.8rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-dark);font-weight:500;margin-bottom:20px}
+.section--dark .eyebrow,.footer .eyebrow{color:var(--gold)}
+.eyebrow::before,.eyebrow::after{content:"";width:36px;height:1px;background:currentColor;opacity:.7}
+.section-head{text-align:center;max-width:740px;margin:0 auto clamp(52px,7vw,84px)}
+.section-head h2{font-size:clamp(2.4rem,5vw,3.8rem);color:var(--ink)}
+.section--dark .section-head h2{color:var(--cream)}
+.section-head h2 em,.h-em{font-style:italic;color:var(--gold-dark)}
+.section--dark .section-head h2 em,.section--dark .h-em{color:var(--gold)}
+.section-head p{margin-top:20px;color:var(--muted)}
+.section--dark .section-head p{color:rgba(250,246,239,.75)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:16px 38px;border:1px solid var(--gold);background:var(--gold);color:var(--black);font-family:var(--sans);font-weight:500;font-size:.84rem;letter-spacing:.22em;text-transform:uppercase;text-decoration:none;transition:background .35s var(--ease),color .35s var(--ease),transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.btn:hover{background:transparent;color:var(--gold);transform:translateY(-2px)}
+.btn--ghost{background:transparent;color:var(--gold)}
+.btn--ghost:hover{background:var(--gold);color:var(--black)}
+.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ================= INTRO / LOADER ================= */
+.intro{position:fixed;inset:0;z-index:300;background:var(--black);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;padding:24px;text-align:center;transition:opacity 1.1s var(--ease),visibility 1.1s}
+.intro.is-gone{opacity:0;visibility:hidden;pointer-events:none}
+.intro__logo{width:min(300px,64vw);height:auto;opacity:0;transform:translateY(10px);animation:fadeUp 1.4s .2s var(--ease) forwards}
+.intro__bar{width:min(220px,50vw);height:1px;background:rgba(201,162,75,.2);position:relative;overflow:hidden;opacity:0;animation:fadeUp 1s .6s var(--ease) forwards}
+.intro__bar span{position:absolute;inset:0;background:var(--gold);transform-origin:left;transform:scaleX(0);transition:transform .4s var(--ease)}
+.intro__enter{opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .9s var(--ease),transform .9s var(--ease),visibility .9s;display:flex;flex-direction:column;align-items:center;gap:16px}
+.intro.is-ready .intro__enter{opacity:1;visibility:visible;transform:none}
+.intro.is-ready .intro__bar{opacity:0!important;transition:opacity .6s;animation:none}
+.intro__hint{font-size:.8rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(250,246,239,.6);display:flex;align-items:center;gap:10px}
+.intro__hint svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.intro__skip{background:none;border:0;color:rgba(250,246,239,.6);font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;padding:12px 16px;min-height:44px;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(201,162,75,.5)}
+.intro__skip:hover{color:var(--gold-light)}
+@keyframes fadeUp{to{opacity:1;transform:none}}
+
+/* ================= NAVBAR ================= */
+.nav{position:fixed;inset:0 0 auto 0;height:var(--nav-h);z-index:100;display:flex;align-items:center;transition:background .5s var(--ease),height .4s var(--ease),box-shadow .5s var(--ease);background:linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,0))}
+.nav.is-scrolled{background:rgba(14,13,12,.72);-webkit-backdrop-filter:saturate(140%) blur(16px);backdrop-filter:saturate(140%) blur(16px);box-shadow:0 1px 0 rgba(201,162,75,.25);height:72px}
+.nav .container{display:flex;align-items:center;gap:24px;width:min(1320px,100% - 48px)}
+.nav__logo{display:block;height:58px;transition:height .4s var(--ease);flex:none}
+.nav.is-scrolled .nav__logo{height:50px}
+.nav__logo img{height:100%;width:auto}
+.nav__links{display:flex;align-items:center;gap:40px;list-style:none;margin-left:auto}
+.nav__links a{text-decoration:none;color:var(--cream);font-size:.82rem;letter-spacing:.24em;text-transform:uppercase;font-weight:400;position:relative;padding:10px 0;transition:color .3s}
+.nav__links a:not(.btn)::after{content:"";position:absolute;left:0;right:0;bottom:4px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav__links a:not(.btn):hover,.nav__links a.is-active{color:var(--gold-light)}
+.nav__links a:not(.btn):hover::after,.nav__links a.is-active::after{transform:scaleX(1);transform-origin:left}
+.nav__drawer-only{display:none}
+.nav__cta{min-height:44px;padding:11px 24px;font-size:.76rem;flex:none}
+.nav__toggle{display:none;width:48px;height:48px;background:none;border:0;position:relative;z-index:110;flex:none;margin-right:-8px}
+.nav__toggle span{position:absolute;left:12px;right:12px;height:1.5px;background:var(--gold);transition:transform .35s var(--ease),opacity .25s,top .35s var(--ease)}
+.nav__toggle span:nth-child(1){top:16px}
+.nav__toggle span:nth-child(2){top:23.5px}
+.nav__toggle span:nth-child(3){top:31px}
+.nav-open .nav__toggle span:nth-child(1){top:23.5px;transform:rotate(45deg)}
+.nav-open .nav__toggle span:nth-child(2){opacity:0}
+.nav-open .nav__toggle span:nth-child(3){top:23.5px;transform:rotate(-45deg)}
+
+@media (max-width:900px){
+  :root{--nav-h:72px}
+  .nav,.nav.is-scrolled{height:72px}
+  .nav__logo,.nav.is-scrolled .nav__logo{height:46px}
+  .nav__toggle{display:block}
+  .nav__cta{margin-left:auto;padding:10px 18px;font-size:.72rem;letter-spacing:.18em;position:relative;z-index:110;transition:opacity .3s}
+  .nav__links{position:fixed;inset:0;margin:0;flex-direction:column;justify-content:center;gap:10px;background:rgba(10,10,10,.97);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility .45s}
+  .nav__links li{transform:translateY(18px);opacity:0;transition:transform .55s var(--ease),opacity .55s var(--ease)}
+  .nav__links a:not(.btn){display:block;font-family:var(--serif);font-size:2rem;letter-spacing:.04em;text-transform:none;padding:8px 24px}
+  .nav__links a:not(.btn)::after{display:none}
+  .nav__drawer-only{display:block}
+  .nav__drawer-only .btn{margin-top:20px;padding:16px 40px}
+  .nav-open .nav{-webkit-backdrop-filter:none;backdrop-filter:none;background:transparent;box-shadow:none} /* a filtered parent would trap the fixed drawer inside the bar */
+  .nav__links a.btn{color:var(--black)}
+  .nav-open .nav__links{opacity:1;visibility:visible}
+  .nav-open .nav__links li{transform:none;opacity:1}
+  .nav-open .nav__links li:nth-child(2){transition-delay:.05s}
+  .nav-open .nav__links li:nth-child(3){transition-delay:.1s}
+  .nav-open .nav__links li:nth-child(4){transition-delay:.15s}
+  .nav-open .nav__links li:nth-child(5){transition-delay:.2s}
+  .nav-open .nav__links li:nth-child(6){transition-delay:.25s}
+  .nav-open .nav__cta{opacity:0;pointer-events:none}
+}
+@media (max-width:380px){.nav__cta{padding:10px 14px;letter-spacing:.12em}}
+
+/* ================= SCROLL FILM ================= */
+.film{position:relative;height:var(--film-len);background:var(--black)}
+.film__stage{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--black)}
+.film__canvas{position:absolute;inset:0;width:100%;height:100%}
+.film__fallback{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.film__shade{position:absolute;inset:0;pointer-events:none;background:
+  radial-gradient(ellipse at center,rgba(0,0,0,.05) 0%,rgba(0,0,0,.45) 100%),
+  linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,.18) 30%,rgba(0,0,0,.22) 65%,rgba(0,0,0,.7) 100%)}
+.film__dip{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none}
+.scene-cap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24px;color:var(--white);opacity:0;pointer-events:none;will-change:opacity,transform,filter}
+.scene-cap--1{opacity:1}
+.scene-cap.is-live{pointer-events:auto}
+.scene-cap__eyebrow{display:inline-flex;align-items:center;gap:16px;font-size:.8rem;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-light);margin-bottom:22px;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.scene-cap__eyebrow::before,.scene-cap__eyebrow::after{content:"";width:40px;height:1px;background:var(--gold)}
+.scene-cap h1,.scene-cap h2{font-size:clamp(2.7rem,8.4vw,7rem);font-weight:400;max-width:14ch;text-shadow:0 2px 30px rgba(0,0,0,.45),0 1px 3px rgba(0,0,0,.35)}
+.scene-cap h1 em,.scene-cap h2 em{font-style:italic;color:var(--gold-light)}
+.scene-cap__sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,2.6vw,1.9rem);margin:18px 0 40px;color:rgba(255,255,255,.92);text-shadow:0 1px 16px rgba(0,0,0,.5)}
+.scene-cap .btn{box-shadow:0 10px 30px rgba(0,0,0,.25)}
+
+/* scene rail */
+.film__rail{position:absolute;right:clamp(16px,3vw,40px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:6px;list-style:none;z-index:3}
+.film__rail button{display:flex;align-items:center;justify-content:flex-end;gap:14px;background:none;border:0;min-height:44px;padding:0 0 0 12px;color:rgba(255,255,255,.55);font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;transition:color .4s}
+.film__rail .lbl{opacity:0;transform:translateX(8px);transition:opacity .4s var(--ease),transform .4s var(--ease);text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.film__rail .tick{width:18px;height:1px;background:currentColor;transition:width .5s var(--ease),background .4s}
+.film__rail button:hover .lbl,.film__rail button.is-active .lbl{opacity:1;transform:none}
+.film__rail button.is-active{color:var(--gold-light)}
+.film__rail button.is-active .tick{width:44px;background:var(--gold)}
+.film__rail button:hover{color:var(--white)}
+/* scene counter + progress */
+.film__meta{position:absolute;left:clamp(16px,3vw,40px);bottom:calc(30px + var(--safe-b));z-index:3;color:var(--white);display:flex;align-items:baseline;gap:14px;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.film__meta .num{font-family:var(--serif);font-size:2.4rem;color:var(--gold-light);line-height:1}
+.film__meta .of{font-size:.8rem;letter-spacing:.2em;color:rgba(255,255,255,.65)}
+.film__meta .name{font-size:.8rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.film__progress{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.12);z-index:3}
+.film__progress span{position:absolute;inset:0;background:linear-gradient(90deg,var(--gold-dark),var(--gold-light));transform-origin:left;transform:scaleX(0)}
+.film__hint{position:absolute;left:50%;bottom:calc(34px + var(--safe-b));transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:12px;color:rgba(255,255,255,.85);font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;white-space:nowrap;transition:opacity .5s;text-shadow:0 1px 8px rgba(0,0,0,.5);pointer-events:none}
+.film__hint i{display:block;width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:hintLine 2.2s var(--ease) infinite;transform-origin:top}
+@keyframes hintLine{0%{transform:scaleY(0);opacity:1}60%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
+.sound-btn{position:absolute;right:clamp(16px,3vw,40px);bottom:calc(26px + var(--safe-b));z-index:3;display:flex;align-items:center;gap:10px;min-height:48px;background:rgba(12,12,12,.5);border:1px solid var(--line);color:var(--cream);padding:10px 18px 10px 14px;border-radius:40px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background .3s,border-color .3s}
+.sound-btn:hover{background:rgba(12,12,12,.8);border-color:var(--gold)}
+.sound-btn svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.5}
+.sound-btn .ic-on,.sound-btn.is-playing .ic-off{display:none}
+.sound-btn.is-playing .ic-on{display:block}
+.sound-btn.pulse{animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(201,162,75,.55)}70%{box-shadow:0 0 0 14px rgba(201,162,75,0)}100%{box-shadow:0 0 0 0 rgba(201,162,75,0)}}
+
+@media (max-width:900px){
+  :root{--film-len:560vh}
+  .film__rail{top:auto;bottom:calc(92px + var(--safe-b));right:50%;transform:translateX(50%);flex-direction:row;gap:0}
+  .film__rail button{padding:0 4px;justify-content:center;min-width:44px}
+  .film__rail .lbl{display:none}
+  .film__rail .tick{width:22px;height:2px}
+  .film__rail button.is-active .tick{width:36px}
+  .film__meta .num{font-size:1.9rem}
+  .film__meta .name{display:none}
+  .film__hint{bottom:calc(150px + var(--safe-b))}
+  .sound-btn .label{display:none}
+  .sound-btn{padding:0;width:48px;justify-content:center}
+  .scene-cap{padding-bottom:40px}
+}
+
+/* ================= ABOUT ================= */
+.about__grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(48px,7vw,110px);align-items:center}
+.about__media{position:relative;margin:18px 0 0 18px}
+.about__media img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.about__media::before{content:"";position:absolute;inset:-18px 18px 18px -18px;border:1px solid var(--gold);z-index:-1}
+.about__badge{position:absolute;right:-22px;bottom:40px;background:var(--charcoal);color:var(--cream);padding:24px 28px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,.2)}
+.about__badge strong{display:block;font-family:var(--serif);font-size:2.6rem;font-weight:500;color:var(--gold);line-height:1}
+.about__badge span{font-size:.74rem;letter-spacing:.25em;text-transform:uppercase}
+.about__text h2{font-size:clamp(2.3rem,4.6vw,3.5rem);margin-bottom:26px}
+.about__text p{color:var(--muted);margin-bottom:38px;font-size:1.1rem}
+.highlights{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}
+.highlight{display:flex;align-items:center;gap:14px;padding:17px 4px;border-bottom:1px solid var(--line);font-size:1rem;color:var(--ink)}
+.highlight svg{flex:none;width:26px;height:26px;stroke:var(--gold-dark);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:900px){
+  .about__grid{grid-template-columns:1fr}
+  .about__media{max-width:500px;width:calc(100% - 18px);margin:18px auto 24px;left:9px}
+  .about__badge{right:12px}
+}
+@media (max-width:440px){.highlights{grid-template-columns:1fr}}
+
+/* ================= GALLERY ================= */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:clamp(150px,19vw,250px);grid-auto-flow:dense;gap:16px}
+.gallery__item{position:relative;overflow:hidden;cursor:zoom-in;display:block;width:100%;height:100%;border:0;padding:0;background:#e8dfcd}
+.gallery__item--tall{grid-row:span 2}
+.gallery__item img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease),opacity .8s var(--ease);opacity:0}
+.gallery__item img.is-loaded{opacity:1}
+.gallery__item::after{content:attr(data-caption);position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;text-align:left;color:var(--cream);font-family:var(--serif);font-size:1.25rem;font-style:italic;background:linear-gradient(transparent,rgba(0,0,0,.7));opacity:0;transform:translateY(10px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.gallery__item:hover img,.gallery__item:focus-visible img{transform:scale(1.05)}
+.gallery__item:hover::after,.gallery__item:focus-visible::after{opacity:1;transform:none}
+@media (max-width:700px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(120px,30vw,200px);gap:10px}.gallery__item::after{display:none}}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;z-index:200;background:rgba(8,8,8,.97);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s var(--ease),visibility .4s}
+.lightbox.is-open{opacity:1;visibility:visible}
+.lightbox figure{max-width:min(1200px,92vw);text-align:center}
+.lightbox img{max-height:80vh;max-width:100%;margin:0 auto;box-shadow:0 30px 80px rgba(0,0,0,.6);transition:opacity .3s}
+.lightbox figcaption{color:var(--cream);font-family:var(--serif);font-style:italic;font-size:1.25rem;margin-top:16px}
+.lightbox figcaption small{display:block;font-family:var(--sans);font-style:normal;font-size:.8rem;letter-spacing:.25em;color:var(--gold);margin-top:4px}
+.lb-btn{position:absolute;background:rgba(12,12,12,.4);border:1px solid var(--line);color:var(--gold);width:54px;height:54px;border-radius:50%;display:grid;place-items:center;transition:background .3s,border-color .3s}
+.lb-btn:hover{background:rgba(201,162,75,.12);border-color:var(--gold)}
+.lb-btn svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:1.5}
+.lb-close{top:22px;right:22px}
+.lb-prev{left:22px;top:50%;transform:translateY(-50%)}
+.lb-next{right:22px;top:50%;transform:translateY(-50%)}
+@media (max-width:600px){.lb-prev,.lb-next{top:auto;bottom:calc(22px + var(--safe-b));transform:none}.lb-prev{left:calc(50% - 66px)}.lb-next{right:calc(50% - 66px)}.lightbox img{max-height:68vh}}
+
+/* ================= PRICING ================= */
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:stretch}
+.price-card{position:relative;background:var(--charcoal-2);border:1px solid rgba(201,162,75,.22);padding:52px 34px 42px;text-align:center;display:flex;flex-direction:column;transition:transform .5s var(--ease),border-color .5s,box-shadow .5s}
+.price-card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 24px 50px rgba(0,0,0,.35)}
+.price-card--featured{border-color:var(--gold);background:linear-gradient(180deg,#2a2621,#1d1b19)}
+.price-card h3{font-size:2rem;color:var(--cream);margin-bottom:6px}
+.price-card__price{font-family:var(--serif);color:var(--gold);font-size:4.2rem;line-height:1;margin:22px 0 6px;font-weight:500}
+.price-card__price sup{font-size:1.6rem;vertical-align:top;position:relative;top:10px;margin-right:2px}
+.price-card__per{font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(250,246,239,.65)}
+.price-card__divider{width:40px;height:1px;background:var(--gold);margin:26px auto}
+.price-card__months{color:rgba(250,246,239,.85);font-size:1rem;flex:1}
+.price-card .btn{margin-top:30px;align-self:center;padding:13px 28px;font-size:.78rem}
+.pricing-notes{margin-top:52px;display:flex;flex-wrap:wrap;justify-content:center;gap:14px 40px;color:rgba(250,246,239,.8);font-size:1rem}
+.pricing-notes span{display:inline-flex;align-items:center;gap:10px}
+.pricing-notes span::before{content:"";width:6px;height:6px;transform:rotate(45deg);background:var(--gold);flex:none}
+.pricing-notes strong{color:var(--gold-light);font-weight:500}
+@media (max-width:900px){.pricing{grid-template-columns:1fr;max-width:460px;margin:0 auto}.price-card--featured{order:-1}.pricing-notes{flex-direction:column;align-items:center;gap:12px}}
+
+/* ================= BOOKING ================= */
+.booking__wrap{display:grid;grid-template-columns:1fr 1.5fr;background:var(--white);box-shadow:0 30px 80px rgba(40,30,15,.12)}
+.booking__aside{position:relative;background:var(--charcoal) url('royalview-assets/thumbs/living-room.jpg') center/cover;color:var(--cream);padding:clamp(36px,5vw,56px);display:flex;flex-direction:column;justify-content:flex-end;min-height:420px}
+.booking__aside::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,12,.3),rgba(12,12,12,.9))}
+.booking__aside > *{position:relative}
+.booking__aside h3{font-size:2.3rem;margin-bottom:12px}
+.booking__aside h3 em{color:var(--gold-light)}
+.booking__aside p{color:rgba(250,246,239,.85);font-size:1rem}
+.booking__aside ul{list-style:none;margin-top:24px;display:grid;gap:10px;font-size:1rem}
+.booking__aside li{display:flex;gap:12px;align-items:center}
+.booking__aside li::before{content:"";width:6px;height:6px;transform:rotate(45deg);background:var(--gold);flex:none}
+.booking__form{padding:clamp(28px,5vw,60px)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px 24px}
+.field{display:flex;flex-direction:column;gap:8px;min-width:0}
+.field--full{grid-column:1/-1}
+.field label{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--ink)}
+.field label .req{color:var(--gold-dark);margin-left:3px}
+.field label .opt{color:var(--muted);letter-spacing:.06em;text-transform:none;font-weight:300}
+.field input,.field select,.field textarea{width:100%;min-width:0;font:inherit;font-size:1rem;min-height:54px;color:var(--ink);background:var(--cream);border:1px solid #e0d5bf;border-radius:0;padding:14px 16px;transition:border-color .3s,background .3s,box-shadow .3s;-webkit-appearance:none;appearance:none}
+.field input[type=date]{display:block}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2394722a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--gold);background:var(--white);box-shadow:0 0 0 3px rgba(201,162,75,.15)}
+.field.is-invalid input,.field.is-invalid select{border-color:#b4442f;background:#fdf3f0;box-shadow:0 0 0 3px rgba(180,68,47,.1)}
+.field .err{font-size:.92rem;color:#a23b27;display:none}
+.field.is-invalid .err{display:block}
+.estimate{grid-column:1/-1;display:none;background:var(--cream-2);border-left:2px solid var(--gold);padding:16px 20px;font-size:1rem;color:var(--ink)}
+.estimate.is-shown{display:block}
+.estimate strong{font-family:var(--serif);font-size:1.6rem;color:var(--gold-dark);font-weight:600}
+.estimate small{display:block;color:var(--muted);margin-top:4px;font-size:.92rem}
+.form-actions{grid-column:1/-1;margin-top:6px}
+.form-actions .btn{width:100%;min-height:58px}
+.form-actions .btn[disabled]{opacity:.6;cursor:wait}
+.form-error{grid-column:1/-1;display:none;padding:14px 18px;font-size:1rem;background:#fbefec;border-left:2px solid #b4442f;color:#6b2618}
+.form-error.is-shown{display:block}
+.success{display:none;text-align:center;padding:30px 10px 10px;outline:none}
+.success.is-shown{display:block;animation:fadeUp .9s var(--ease) both}
+.success__icon{width:76px;height:76px;margin:0 auto 24px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center}
+.success__icon svg{width:34px;height:34px;stroke:var(--gold-dark);fill:none;stroke-width:1.5;stroke-dasharray:40;stroke-dashoffset:40;animation:draw 1s .3s var(--ease) forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.success h3{font-size:2.4rem;margin-bottom:12px}
+.success p{color:var(--muted);max-width:44ch;margin:0 auto}
+.success .note{font-size:.95rem;margin-top:14px;font-style:italic}
+.success .btn{margin-top:28px}
+.booking__note{margin-top:34px;padding-top:26px;border-top:1px solid #ece3d2;font-size:1rem;color:var(--muted)}
+.booking__note a{color:var(--gold-dark)}
+.contact-line{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:14px;color:var(--ink)}
+.contact-line span{display:inline-flex;align-items:center;gap:8px}
+.contact-line svg{width:18px;height:18px;stroke:var(--gold-dark);fill:none;stroke-width:1.5}
+@media (max-width:900px){.booking__wrap{grid-template-columns:1fr}.booking__aside{min-height:300px}}
+@media (max-width:560px){.form-grid{grid-template-columns:1fr}}
+
+/* ================= AMENITIES ================= */
+.amenities{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.amenity{background:var(--cream-2);padding:44px 18px 38px;text-align:center;transition:background .4s var(--ease)}
+.amenity:hover{background:var(--white)}
+.amenity svg{width:46px;height:46px;margin:0 auto 18px;stroke:var(--gold-dark);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .5s var(--ease)}
+.amenity:hover svg{transform:translateY(-4px)}
+.amenity h3{font-size:1.3rem;font-weight:500;color:var(--ink)}
+@media (max-width:1000px){.amenities{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:600px){.amenities{grid-template-columns:repeat(2,1fr)}.amenity{padding:32px 12px 28px}.amenity h3{font-size:1.15rem}}
+
+/* ================= HOUSE RULES ================= */
+.rules__grid{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(48px,7vw,110px);align-items:start}
+.rules__intro h2{font-size:clamp(2.3rem,4.6vw,3.5rem);color:var(--cream);margin-bottom:22px}
+.rules__intro p{color:rgba(250,246,239,.8)}
+.rules__intro img{margin-top:40px;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;opacity:.92}
+.rules{list-style:none;counter-reset:rule;display:grid;grid-template-columns:1fr 1fr;gap:0 44px}
+.rules li{counter-increment:rule;display:flex;align-items:baseline;gap:18px;padding:21px 0;border-bottom:1px solid rgba(201,162,75,.2);color:rgba(250,246,239,.92);font-size:1.05rem}
+.rules li::before{content:counter(rule,decimal-leading-zero);font-family:var(--serif);font-size:1.4rem;color:var(--gold);min-width:30px}
+.rules li.rule--last{grid-column:1/-1;border-bottom:0;font-family:var(--serif);font-style:italic;font-size:1.6rem;color:var(--gold-light)}
+@media (max-width:900px){.rules__grid{grid-template-columns:1fr}.rules__intro img{display:none}}
+@media (max-width:560px){.rules{grid-template-columns:1fr}}
+
+/* ================= LOCATION ================= */
+.location__grid{display:grid;grid-template-columns:1fr 1.5fr;gap:clamp(40px,6vw,80px);align-items:center}
+.location__text h2{font-size:clamp(2.3rem,4.6vw,3.5rem);margin-bottom:10px}
+.location__address{font-family:var(--serif);font-size:1.45rem;font-style:italic;color:var(--gold-dark);margin-bottom:32px}
+.distances{list-style:none;border-top:1px solid var(--line)}
+.distances li{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:19px 0;border-bottom:1px solid var(--line)}
+.distances .time{font-family:var(--serif);font-size:1.7rem;color:var(--gold-dark);white-space:nowrap}
+.map{position:relative;aspect-ratio:4/3;background:var(--cream-2);border:1px solid var(--line);padding:10px}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.25) sepia(.12)}
+@media (max-width:900px){.location__grid{grid-template-columns:1fr}.map{aspect-ratio:1/1}}
+
+/* ================= FOOTER ================= */
+.footer{background:var(--black);color:rgba(250,246,239,.75);padding:96px 0 calc(34px + var(--safe-b));font-size:1rem;position:relative;z-index:2}
+.footer__cta{text-align:center;padding-bottom:72px;margin-bottom:64px;border-bottom:1px solid rgba(201,162,75,.2)}
+.footer__cta h2{font-size:clamp(2.2rem,5vw,3.6rem);color:var(--cream);margin-bottom:30px}
+.footer__cta h2 em{color:var(--gold)}
+.footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(201,162,75,.2)}
+.footer__logo{display:inline-block}
+.footer__logo img{width:220px;height:auto;margin-bottom:18px}
+.footer__brand p{max-width:34ch}
+.footer h4{font-family:var(--sans);font-size:.8rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px}
+.footer ul{list-style:none;display:grid;gap:2px}
+.footer li > a,.footer li > span{display:inline-flex;align-items:center;gap:10px;min-height:44px;text-decoration:none;transition:color .3s}
+.footer li svg{width:17px;height:17px;stroke:var(--gold);fill:none;stroke-width:1.5;flex:none}
+.footer a:hover{color:var(--gold-light)}
+.footer [data-contact] a{text-decoration:none}
+.footer .airbnb{display:inline-flex;align-items:center;gap:10px;margin-top:22px;min-height:48px;border:1px solid var(--line);padding:10px 20px;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);text-decoration:none;transition:border-color .3s,color .3s}
+.footer .airbnb:hover{border-color:var(--gold)}
+.footer .airbnb svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.6}
+.footer .booking-com{margin-top:10px}
+.footer__bottom{padding-top:28px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;font-size:.92rem;color:rgba(250,246,239,.55)}
+.footer__bottom a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+@media (max-width:800px){.footer__grid{grid-template-columns:1fr 1fr;gap:40px}.footer__brand{grid-column:1/-1}}
+@media (max-width:480px){.footer__grid{grid-template-columns:1fr}.footer__bottom{flex-direction:column;align-items:flex-start}}
+@media (max-width:600px){.footer{padding-bottom:calc(96px + var(--safe-b))}}
+
+/* ================= FLOATING BOOK BUTTON ================= */
+.fab{position:fixed;right:28px;bottom:calc(28px + var(--safe-b));z-index:90;display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 28px;background:var(--gold);color:var(--black);border:1px solid var(--gold);border-radius:60px;font-size:.82rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;box-shadow:0 14px 34px rgba(0,0,0,.28);opacity:0;visibility:hidden;transform:translateY(20px) scale(.96);transition:opacity .5s var(--ease),transform .5s var(--ease),visibility .5s,background .3s,color .3s}
+.fab svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.6}
+.fab.is-shown{opacity:1;visibility:visible;transform:none}
+.fab:hover{background:var(--black);color:var(--gold)}
+@media (max-width:600px){.fab{left:16px;right:16px;bottom:calc(14px + var(--safe-b));justify-content:center}}
+
+/* ================= SCROLL REVEAL ================= */
+.reveal{opacity:0;transform:translateY(36px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.reveal.is-in{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:.12s}
+.reveal[data-delay="2"]{transition-delay:.24s}
+.reveal[data-delay="3"]{transition-delay:.36s}
+.reveal[data-delay="4"]{transition-delay:.48s}
+
+@media (max-width:600px){
+  body{font-size:1rem}
+  .container{width:calc(100% - 40px)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+<noscript><style>html.is-locked{overflow:auto}.intro{display:none}.film{height:100vh}.film__hint,.film__rail,.film__meta,.sound-btn{display:none}.reveal{opacity:1;transform:none}</style></noscript>
+</head>
+<body>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-bed" viewBox="0 0 48 48"><path d="M5 38V12M5 30h38v8M43 30v-6a5 5 0 0 0-5-5H21v11"/><circle cx="13" cy="22" r="4"/></symbol>
+  <symbol id="i-bath" viewBox="0 0 48 48"><path d="M4 24h40v4a10 10 0 0 1-10 10H14A10 10 0 0 1 4 28v-4zM10 24V10a4 4 0 0 1 8 0M14 38l-2 4M34 38l2 4"/></symbol>
+  <symbol id="i-guests" viewBox="0 0 48 48"><circle cx="17" cy="16" r="6"/><path d="M5 40v-3a10 10 0 0 1 10-10h4a10 10 0 0 1 10 10v3"/><circle cx="33" cy="14" r="5"/><path d="M31 25h4a9 9 0 0 1 9 9v3"/></symbol>
+  <symbol id="i-mountain" viewBox="0 0 48 48"><path d="M3 40l14-22 8 12 6-8 14 18zM13 24l4 3 4-3"/><circle cx="36" cy="10" r="4"/></symbol>
+  <symbol id="i-parking" viewBox="0 0 48 48"><rect x="6" y="6" width="36" height="36" rx="4"/><path d="M18 34V14h8a6 6 0 0 1 0 12h-8"/></symbol>
+  <symbol id="i-ac" viewBox="0 0 48 48"><path d="M24 4v40M7 14l34 20M7 34l34-20M19 6l5 5 5-5M19 42l5-5 5 5M6 20l7-2-2-7M42 28l-7 2 2 7M6 28l7 2-2 7M42 20l-7-2 2-7"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 48 48"><path d="M6 14l26-6 3 12-26 6zM20 24l2 8M8 38h14l0-6"/><circle cx="24" cy="15" r="2"/><path d="M36 13l7-2 1 6-7 2"/></symbol>
+  <symbol id="i-desk" viewBox="0 0 48 48"><rect x="10" y="8" width="28" height="18" rx="2"/><path d="M4 32h40M20 26v6M28 26v6M8 32v10M40 32v10"/></symbol>
+  <symbol id="i-kitchen" viewBox="0 0 48 48"><path d="M14 4v14a4 4 0 0 1-8 0V4M10 4v40M34 44V4c-6 3-8 10-8 18h8"/></symbol>
+  <symbol id="i-washer" viewBox="0 0 48 48"><rect x="8" y="4" width="32" height="40" rx="3"/><path d="M8 13h32"/><circle cx="24" cy="28" r="9"/><path d="M18 29c3-2 5 2 12-1"/><circle cx="14" cy="8.5" r="1"/><circle cx="19" cy="8.5" r="1"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 48 48"><path d="M4 18a28 28 0 0 1 40 0M10 25a19 19 0 0 1 28 0M16 32a10 10 0 0 1 16 0"/><circle cx="24" cy="38" r="2"/></symbol>
+  <symbol id="i-tv" viewBox="0 0 48 48"><rect x="4" y="8" width="40" height="26" rx="2"/><path d="M16 42h16M24 34v8M20 17l8 4-8 4z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+  <symbol id="i-ext" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-sound-on" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4zM16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/></symbol>
+  <symbol id="i-sound-off" viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4zM17 9l5 6M22 9l-5 6"/></symbol>
+</svg>
+
+<!-- ================= INTRO ================= -->
+<div class="intro" id="intro">
+  <img class="intro__logo" src="royalview-assets/logo.png" alt="The Royal View Holiday Rental" width="452" height="236">
+  <div class="intro__bar" aria-hidden="true"><span id="introBar"></span></div>
+  <div class="intro__enter">
+    <button class="btn" id="enterBtn">Enter The Royal View</button>
+    <span class="intro__hint"><svg><use href="#i-sound-on"/></svg>Best experienced with sound</span>
+    <button class="intro__skip" id="enterMuted">Enter without sound</button>
+  </div>
+</div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="#top" class="nav__logo" aria-label="The Royal View, back to top"><img src="royalview-assets/logo.png" alt="The Royal View Holiday Rental" width="452" height="236"></a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li class="nav__drawer-only"><a href="#rules">House Rules</a></li>
+      <li class="nav__drawer-only"><a href="#location">Location</a></li>
+      <li class="nav__drawer-only"><a href="#booking" class="btn">Book Now</a></li>
+    </ul>
+    <a href="#booking" class="btn nav__cta">Book Now</a>
+    <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ================= SCROLL FILM ================= -->
+<section class="film" id="top" aria-label="Video tour of The Royal View">
+  <div class="film__stage">
+    <canvas class="film__canvas" id="filmCanvas" aria-hidden="true"></canvas>
+    <noscript><img class="film__fallback" src="royalview-assets/exterior-golden-hour.jpg" alt="The Royal View exterior"></noscript>
+    <div class="film__dip" id="filmDip"></div>
+    <div class="film__shade"></div>
+
+    <div class="scene-cap scene-cap--1 is-live">
+      <span class="scene-cap__eyebrow">Linstead · Jamaica</span>
+      <h1>Welcome to <em>The Royal View</em></h1>
+      <p class="scene-cap__sub">Your Jamaican Getaway Awaits</p>
+      <a href="#booking" class="btn">Book Your Stay</a>
+    </div>
+    <div class="scene-cap">
+      <span class="scene-cap__eyebrow">The Living Room</span>
+      <h2>Where Comfort <em>Meets Style</em></h2>
+    </div>
+    <div class="scene-cap">
+      <span class="scene-cap__eyebrow">The Bathroom</span>
+      <h2>Unwind in <em>Luxury</em></h2>
+    </div>
+    <div class="scene-cap">
+      <span class="scene-cap__eyebrow">The Bedroom</span>
+      <h2>Rest Like <em>Royalty</em></h2>
+    </div>
+    <div class="scene-cap">
+      <span class="scene-cap__eyebrow">The Kitchen</span>
+      <h2>Everything <em>You Need</em></h2>
+    </div>
+
+    <ul class="film__rail" id="filmRail" aria-label="Jump to scene">
+      <li><button data-go="0" aria-label="Scene 1: Exterior"><span class="lbl">Exterior</span><span class="tick"></span></button></li>
+      <li><button data-go="1" aria-label="Scene 2: Living room"><span class="lbl">Living Room</span><span class="tick"></span></button></li>
+      <li><button data-go="2" aria-label="Scene 3: Bathroom"><span class="lbl">Bathroom</span><span class="tick"></span></button></li>
+      <li><button data-go="3" aria-label="Scene 4: Bedroom"><span class="lbl">Bedroom</span><span class="tick"></span></button></li>
+      <li><button data-go="4" aria-label="Scene 5: Kitchen"><span class="lbl">Kitchen</span><span class="tick"></span></button></li>
+    </ul>
+    <div class="film__meta" aria-hidden="true"><span class="num" id="sceneNum">01</span><span class="of">/ 05</span><span class="name" id="sceneName">The Exterior</span></div>
+    <div class="film__hint" id="filmHint" aria-hidden="true">Scroll to explore<i></i></div>
+    <button class="sound-btn" id="soundBtn" aria-label="Play voiceover" aria-pressed="false">
+      <svg class="ic-off"><use href="#i-sound-off"/></svg>
+      <svg class="ic-on"><use href="#i-sound-on"/></svg>
+      <span class="label">Voiceover</span>
+    </button>
+    <div class="film__progress" aria-hidden="true"><span id="filmProgress"></span></div>
+  </div>
+  <audio id="voiceover" src="royalview-assets/voiceover.mp3" preload="auto"></audio>
+</section>
+
+<main class="content">
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="container about__grid">
+    <div class="about__media reveal">
+      <img src="royalview-assets/thumbs/exterior-golden-hour.jpg" alt="The Royal View exterior at golden hour" loading="lazy" decoding="async" width="672" height="900">
+      <div class="about__badge"><strong>8</strong><span>Guests</span></div>
+    </div>
+    <div class="about__text">
+      <span class="eyebrow reveal">The Residence</span>
+      <h2 class="reveal" data-delay="1">Modern comfort in the <span class="h-em">hills of St Catherine</span></h2>
+      <p class="reveal" data-delay="2">Stunning newly built 3 bedroom 3 bathroom house situated near market and shops. 30 minutes drive to Ocho Rios and 30 minutes drive to Kingston. Sleek and modern design in a quiet housing scheme with friendly neighbours. Lovely view of the hills. Fully AC and security cameras.</p>
+      <div class="highlights reveal" data-delay="3">
+        <div class="highlight"><svg><use href="#i-bed"/></svg>3 Bedrooms</div>
+        <div class="highlight"><svg><use href="#i-bath"/></svg>3 Bathrooms</div>
+        <div class="highlight"><svg><use href="#i-guests"/></svg>Sleeps 8</div>
+        <div class="highlight"><svg><use href="#i-mountain"/></svg>Mountain View</div>
+        <div class="highlight"><svg><use href="#i-parking"/></svg>Free Parking</div>
+        <div class="highlight"><svg><use href="#i-ac"/></svg>Full AC</div>
+        <div class="highlight"><svg><use href="#i-camera"/></svg>Security Cameras</div>
+        <div class="highlight"><svg><use href="#i-desk"/></svg>Dedicated Workspace</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section class="section section--alt" id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal">Gallery</span>
+      <h2 class="reveal" data-delay="1">A glimpse <em>inside</em></h2>
+      <p class="reveal" data-delay="2">Bright, airy spaces finished with granite, dark wood and soft gold light. Tap any photo to view it full size.</p>
+    </div>
+    <div class="gallery" id="galleryGrid"></div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" aria-hidden="true">
+  <button class="lb-btn lb-close" id="lbClose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo"><svg viewBox="0 0 24 24"><path d="M15 4l-8 8 8 8"/></svg></button>
+  <figure>
+    <img id="lbImg" alt="">
+    <figcaption><span id="lbCap"></span><small id="lbCount"></small></figcaption>
+  </figure>
+  <button class="lb-btn lb-next" id="lbNext" aria-label="Next photo"><svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg></button>
+</div>
+
+<!-- ================= PRICING ================= -->
+<section class="section section--dark" id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal">Rates</span>
+      <h2 class="reveal" data-delay="1">Seasonal <em>pricing</em></h2>
+      <p class="reveal" data-delay="2">One nightly rate for the whole house, for up to 8 guests.</p>
+    </div>
+    <div class="pricing">
+      <article class="price-card reveal" data-delay="1">
+        <h3>Low Season</h3>
+        <div class="price-card__price"><sup>$</sup>110</div>
+        <div class="price-card__per">USD per night</div>
+        <div class="price-card__divider"></div>
+        <p class="price-card__months">September, October, November, January 10th onwards &amp; February</p>
+        <a href="#booking" class="btn btn--ghost">Check Dates</a>
+      </article>
+      <article class="price-card price-card--featured reveal" data-delay="2">
+        <h3>Peak Season</h3>
+        <div class="price-card__price"><sup>$</sup>150</div>
+        <div class="price-card__per">USD per night</div>
+        <div class="price-card__divider"></div>
+        <p class="price-card__months">December, March, April, July &amp; August</p>
+        <a href="#booking" class="btn">Book Peak Dates</a>
+      </article>
+      <article class="price-card reveal" data-delay="3">
+        <h3>Standard Season</h3>
+        <div class="price-card__price"><sup>$</sup>130</div>
+        <div class="price-card__per">USD per night</div>
+        <div class="price-card__divider"></div>
+        <p class="price-card__months">All other dates, including May, June &amp; early January</p>
+        <a href="#booking" class="btn btn--ghost">Check Dates</a>
+      </article>
+    </div>
+    <div class="pricing-notes reveal">
+      <span>Cleaning fee: <strong>$40 USD per stay</strong></span>
+      <span>Booking fee applies</span>
+      <span>Minimum stay may apply</span>
+      <span>All prices in USD</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOKING ================= -->
+<section class="section" id="booking">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal">Reservations</span>
+      <h2 class="reveal" data-delay="1">Request to <em>book direct</em></h2>
+      <p class="reveal" data-delay="2">Send us your dates and we'll personally confirm availability.</p>
+    </div>
+    <div class="booking__wrap reveal">
+      <aside class="booking__aside">
+        <h3>Your stay at <em>The Royal View</em></h3>
+        <p>Book directly with us for a personal welcome and local tips.</p>
+        <ul>
+          <li>Entire home · 3 bed · 3 bath</li>
+          <li>Up to 8 guests</li>
+          <li>Free on-site parking</li>
+          <li>Fully air conditioned</li>
+        </ul>
+      </aside>
+      <div class="booking__form">
+        <form id="bookingForm" novalidate>
+          <div class="form-grid">
+            <div class="field field--full">
+              <label for="name">Full Name<span class="req" aria-hidden="true">*</span></label>
+              <input id="name" name="name" type="text" autocomplete="name" required aria-describedby="name-err">
+              <span class="err" id="name-err"></span>
+            </div>
+            <div class="field">
+              <label for="email">Email Address<span class="req" aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-err">
+              <span class="err" id="email-err"></span>
+            </div>
+            <div class="field">
+              <label for="phone">Phone Number<span class="req" aria-hidden="true">*</span></label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="phone-err">
+              <span class="err" id="phone-err"></span>
+            </div>
+            <div class="field">
+              <label for="checkin">Check In Date<span class="req" aria-hidden="true">*</span></label>
+              <input id="checkin" name="checkin" type="date" required aria-describedby="checkin-err">
+              <span class="err" id="checkin-err"></span>
+            </div>
+            <div class="field">
+              <label for="checkout">Check Out Date<span class="req" aria-hidden="true">*</span></label>
+              <input id="checkout" name="checkout" type="date" required aria-describedby="checkout-err">
+              <span class="err" id="checkout-err"></span>
+            </div>
+            <div class="field field--full">
+              <label for="guests">Number of Guests<span class="req" aria-hidden="true">*</span></label>
+              <select id="guests" name="guests" required aria-describedby="guests-err">
+                <option value="">Select guests (max 8)</option>
+                <option>1</option><option>2</option><option>3</option><option>4</option>
+                <option>5</option><option>6</option><option>7</option><option>8</option>
+              </select>
+              <span class="err" id="guests-err"></span>
+            </div>
+            <div class="estimate" id="estimate" aria-live="polite"></div>
+            <div class="field field--full">
+              <label for="requests">Special Requests <span class="opt">(optional)</span></label>
+              <textarea id="requests" name="requests" placeholder="Arrival time, occasion, anything we should know…"></textarea>
+            </div>
+            <div class="form-error" id="formError" role="alert"></div>
+            <div class="form-actions">
+              <button type="submit" class="btn" id="submitBtn">Request to Book</button>
+            </div>
+          </div>
+        </form>
+        <div class="success" id="success" role="status" aria-live="polite" tabindex="-1">
+          <div class="success__icon"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+          <h3 id="successTitle">Thank you</h3>
+          <p>Your booking request has been received. We'll be in touch shortly to confirm availability.</p>
+          <p class="note" id="successNote" hidden></p>
+          <button type="button" class="btn btn--ghost" id="anotherBtn">Make another request</button>
+        </div>
+        <div class="booking__note">
+          <p>Contact details and payment information will be provided upon booking confirmation. Also available on <a href="https://www.airbnb.co.uk/rooms/42019455" target="_blank" rel="noopener">Airbnb</a> and <a href="https://www.booking.com" target="_blank" rel="noopener">Booking.com</a>.</p>
+          <div class="contact-line">
+            <span><svg><use href="#i-mail"/></svg><span data-contact="email">[CONTACT EMAIL]</span></span>
+            <span><svg><use href="#i-phone"/></svg><span data-contact="phone">[CONTACT PHONE]</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AMENITIES ================= -->
+<section class="section section--alt" id="amenities">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal">Amenities</span>
+      <h2 class="reveal" data-delay="1">Everything you <em>need</em></h2>
+    </div>
+    <div class="amenities">
+      <div class="amenity reveal"><svg><use href="#i-ac"/></svg><h3>Full Air Conditioning</h3></div>
+      <div class="amenity reveal" data-delay="1"><svg><use href="#i-camera"/></svg><h3>Security Cameras</h3></div>
+      <div class="amenity reveal" data-delay="2"><svg><use href="#i-parking"/></svg><h3>Free Parking</h3></div>
+      <div class="amenity reveal" data-delay="3"><svg><use href="#i-mountain"/></svg><h3>Mountain View</h3></div>
+      <div class="amenity reveal" data-delay="4"><svg><use href="#i-kitchen"/></svg><h3>Fully Equipped Kitchen</h3></div>
+      <div class="amenity reveal"><svg><use href="#i-washer"/></svg><h3>Washing Machine</h3></div>
+      <div class="amenity reveal" data-delay="1"><svg><use href="#i-wifi"/></svg><h3>High Speed WiFi</h3></div>
+      <div class="amenity reveal" data-delay="2"><svg><use href="#i-tv"/></svg><h3>Smart TV</h3></div>
+      <div class="amenity reveal" data-delay="3"><svg><use href="#i-desk"/></svg><h3>Dedicated Workspace</h3></div>
+      <div class="amenity reveal" data-delay="4"><svg><use href="#i-guests"/></svg><h3>Sleeps up to 8 Guests</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOUSE RULES ================= -->
+<section class="section section--dark" id="rules">
+  <div class="container rules__grid">
+    <div class="rules__intro">
+      <span class="eyebrow reveal">House Rules</span>
+      <h2 class="reveal" data-delay="1">Our home, <span class="h-em">your sanctuary</span></h2>
+      <p class="reveal" data-delay="2">A few simple rules keep The Royal View beautiful for every guest, and peaceful for our friendly neighbours.</p>
+      <img class="reveal" data-delay="3" src="royalview-assets/thumbs/bedroom-1.jpg" alt="Bedroom at The Royal View" loading="lazy" decoding="async" width="900" height="600">
+    </div>
+    <ol class="rules reveal" data-delay="1">
+      <li>No smoking inside the house</li>
+      <li>No partying</li>
+      <li>No loud music</li>
+      <li>No fighting</li>
+      <li>No pets</li>
+      <li>Treat our home with respect</li>
+      <li>No marking on walls</li>
+      <li>Report anything broken</li>
+      <li>No eating on the sofa</li>
+      <li class="rule--last">Relax and enjoy The Royal View</li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= LOCATION ================= -->
+<section class="section" id="location">
+  <div class="container location__grid">
+    <div class="location__text">
+      <span class="eyebrow reveal">Location</span>
+      <h2 class="reveal" data-delay="1">Find us</h2>
+      <p class="location__address reveal" data-delay="2">Hillview Estate, Linstead, St Catherine, Jamaica</p>
+      <ul class="distances reveal" data-delay="3">
+        <li><span>Ocho Rios</span><span class="time">30 min</span></li>
+        <li><span>Kingston</span><span class="time">30 min</span></li>
+        <li><span>Local shops &amp; market</span><span class="time">5 min</span></li>
+      </ul>
+    </div>
+    <div class="map reveal" data-delay="2">
+      <iframe title="Map of Linstead, St Catherine, Jamaica" src="https://maps.google.com/maps?q=Linstead,%20St%20Catherine,%20Jamaica&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__cta reveal">
+      <span class="eyebrow">Your stay awaits</span>
+      <h2>Experience <em>The Royal View</em></h2>
+      <a href="#booking" class="btn">Book Your Stay</a>
+    </div>
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="#top" class="footer__logo" aria-label="Back to top"><img src="royalview-assets/logo.png" alt="The Royal View Holiday Rental" width="452" height="236" loading="lazy"></a>
+        <p>A newly built luxury holiday home in the hills of Linstead, St Catherine, Jamaica.</p>
+        <a class="airbnb" href="https://www.airbnb.co.uk/rooms/42019455" target="_blank" rel="noopener">View on Airbnb <svg><use href="#i-ext"/></svg></a>
+        <a class="airbnb booking-com" href="https://www.booking.com" target="_blank" rel="noopener">View on Booking.com <svg><use href="#i-ext"/></svg></a>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#amenities">Amenities</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#rules">House Rules</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#booking">Book Now</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><span><svg><use href="#i-mail"/></svg><span data-contact="email">[CONTACT EMAIL]</span></span></li>
+          <li><span><svg><use href="#i-phone"/></svg><span data-contact="phone">[CONTACT PHONE]</span></span></li>
+          <li><span><svg><use href="#i-pin"/></svg>Hillview Estate, Linstead, St Catherine</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span id="year">2026</span> The Royal View. All rights reserved.</span>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<a href="#booking" class="fab" id="fab" aria-hidden="true" tabindex="-1"><svg><use href="#i-cal"/></svg>Book Now</a>
+
+<script>
+/* =========================================================
+   SITE SETTINGS: fill these in before going live
+   ========================================================= */
+const CONFIG = {
+  contactEmail: 'hillviewestatelinstead@outlook.com',
+  contactPhone: '+44 7826 048900',
+  // Optional: a form-handling endpoint (e.g. Formspree, Basin, Getform).
+  // If left empty, "Request to Book" opens the guest's email app with the
+  // enquiry pre-filled and addressed to contactEmail.
+  formEndpoint: ''
+};
+
+/* Scroll film: 181 frames (12 fps) extracted from royalview-assets/hero.mp4.
+   lg = 1280x720 for landscape screens, pt = 540x720 portrait crop for phones. */
+const FILM = { frames: 181, path: 'royalview-assets/frames/', scenes: ['The Exterior', 'The Living Room', 'The Bathroom', 'The Bedroom', 'The Kitchen'] };
+
+const PHOTOS = [
+  ['exterior-golden-hour.jpg', 'The Royal View at golden hour', true],
+  ['open-plan.jpg', 'Open-plan living, dining & kitchen'],
+  ['bedroom-1.jpg', 'Master bedroom'],
+  ['kitchen.jpg', 'Fully equipped kitchen'],
+  ['living-room.jpg', 'Living room', true],
+  ['living-dining.jpg', 'Living & dining area'],
+  ['bedroom-2.jpg', 'Second bedroom'],
+  ['bathtub.jpg', 'Bathroom with soaking tub', true],
+  ['kitchen-island.jpg', 'Granite breakfast bar'],
+  ['bedroom-3.jpg', 'Third bedroom'],
+  ['dining.jpg', 'Dining area', true],
+  ['kitchen-appliances.jpg', 'Stainless steel appliances'],
+  ['exterior-front.jpg', 'Front of the house'],
+  ['bathroom-2.jpg', 'Modern bathroom', true],
+  ['bedroom-3-alt.jpg', 'Third bedroom, king bed'],
+  ['bathroom-vanity.jpg', 'Bathroom vanity'],
+  ['hallway.jpg', 'Hallway details', true],
+  ['ceiling-light.jpg', 'Designer lighting']
+].map(([file, caption, tall]) => ({ full: 'royalview-assets/' + file, thumb: 'royalview-assets/thumbs/' + file, caption, tall: !!tall }));
+
+(function () {
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a)); return t * t * (3 - 2 * t); };
+  const isPlaceholder = v => !v || /^\[.*\]$/.test(v.trim());
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const root = document.documentElement;
+  if ('scrollRestoration' in history && !location.hash) history.scrollRestoration = 'manual';
+
+  /* ---------- Contact placeholders ---------- */
+  $$('[data-contact="email"]').forEach(el => {
+    if (!isPlaceholder(CONFIG.contactEmail)) el.innerHTML = `<a href="mailto:${CONFIG.contactEmail}">${CONFIG.contactEmail}</a>`;
+  });
+  $$('[data-contact="phone"]').forEach(el => {
+    if (!isPlaceholder(CONFIG.contactPhone)) el.innerHTML = `<a href="tel:${CONFIG.contactPhone.replace(/[^\d+]/g, '')}">${CONFIG.contactPhone}</a>`;
+  });
+  $('#year').textContent = new Date().getFullYear();
+
+  /* =========================================================
+     SCROLL FILM: frame sequence drawn to canvas, driven by scroll
+     ========================================================= */
+  const film = $('#top'), canvas = $('#filmCanvas'), ctx = canvas.getContext('2d');
+  const dip = $('#filmDip'), hint = $('#filmHint'), progressBar = $('#filmProgress');
+  const caps = $$('.scene-cap'), railBtns = $$('#filmRail button');
+  const sceneNum = $('#sceneNum'), sceneName = $('#sceneName');
+  const N = FILM.frames, SCENES = FILM.scenes.length;
+  const FIRST_BATCH = Math.ceil(N / 12);   // every 12th frame: enough to scrub the whole film
+  const sets = {}, loaded = {};
+  let set = null, filmTop = 0, filmRange = 1, vh = innerHeight;
+  let current = 0, needsDraw = true, lastScene = -1, onProgress = null;
+
+  const pickSet = () => (innerWidth / innerHeight < 0.9 ? 'pt' : 'lg');
+  const frameSrc = (s, i) => `${FILM.path}${s}/${String(i).padStart(3, '0')}.webp`;
+
+  // Load order: first frame, then coarse-to-fine strides, so the whole film is
+  // scrubbable quickly and fills in detail as more frames arrive.
+  const loadOrder = (() => {
+    const seen = new Set([0]), order = [0];
+    for (const step of [24, 12, 6, 3, 1]) for (let i = 0; i < N; i += step) if (!seen.has(i)) { seen.add(i); order.push(i); }
+    return order;
+  })();
+
+  function startLoading(s) {
+    if (sets[s]) return;
+    sets[s] = new Array(N); loaded[s] = new Uint8Array(N);
+    let next = 0, active = 0, done = 0;
+    const pump = () => {
+      while (active < 6 && next < loadOrder.length) {
+        const i = loadOrder[next++]; active++;
+        const img = new Image();
+        img.decoding = 'async';
+        img.onload = img.onerror = () => {
+          active--; done++;
+          if (img.naturalWidth) { sets[s][i] = img; loaded[s][i] = 1; if (s === set) needsDraw = true; }
+          if (s === set && onProgress) onProgress(done / FIRST_BATCH);
+          pump();
+        };
+        img.src = frameSrc(s, i);
+      }
+    };
+    pump();
+  }
+  function nearestFrame(i) {
+    const l = loaded[set];
+    if (!l) return null;
+    for (let d = 0; d < N; d++) {
+      if (i - d >= 0 && l[i - d]) return sets[set][i - d];
+      if (i + d < N && l[i + d]) return sets[set][i + d];
+    }
+    return null;
+  }
+
+  function sizeCanvas() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const w = Math.round(canvas.clientWidth * dpr), h = Math.round(canvas.clientHeight * dpr);
+    if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; needsDraw = true; }
+  }
+  function measure() {
+    vh = innerHeight;
+    filmTop = film.offsetTop;
+    filmRange = Math.max(1, film.offsetHeight - vh);
+    sizeCanvas();
+    const want = pickSet();
+    if (want !== set) { set = want; startLoading(set); needsDraw = true; }
+  }
+  const scrollProgress = () => clamp((window.scrollY - filmTop) / filmRange);
+
+  function draw(frameIndex) {
+    const img = nearestFrame(frameIndex);
+    if (!img) return;
+    const cw = canvas.width, ch = canvas.height, iw = img.naturalWidth, ih = img.naturalHeight;
+    const s = Math.max(cw / iw, ch / ih), w = iw * s, h = ih * s;
+    ctx.drawImage(img, (cw - w) / 2, (ch - h) / 2, w, h);
+  }
+
+  function renderOverlays(p) {
+    const k = p * SCENES;  // 0..5
+    // Captions: fade in as a scene starts, fade out before the next one begins
+    caps.forEach((cap, i) => {
+      const t = k - i;
+      let o = 0;
+      if (t >= -0.001 && t <= 1.001) {
+        const fadeIn = i === 0 ? 1 : smooth(0.06, 0.26, t);
+        const fadeOut = i === SCENES - 1 ? 1 : 1 - smooth(0.68, 0.9, t);
+        o = fadeIn * fadeOut;
+      }
+      cap.style.opacity = o.toFixed(3);
+      cap.style.transform = o > 0.999 ? 'none' : `translateY(${((1 - o) * (t < 0.5 ? 28 : -28)).toFixed(1)}px) scale(${(0.98 + o * 0.02).toFixed(4)})`;
+      cap.style.filter = o > 0.99 ? 'none' : `blur(${((1 - o) * 6).toFixed(1)}px)`;
+      cap.classList.toggle('is-live', o > 0.6);
+    });
+    // Cinematic dip to black around each scene change
+    let dist = 1;
+    for (let b = 1; b < SCENES; b++) dist = Math.min(dist, Math.abs(k - b));
+    dip.style.opacity = (0.6 * (1 - smooth(0, 0.11, dist))).toFixed(3);
+    // Progress + scene indicator
+    progressBar.style.transform = `scaleX(${p.toFixed(4)})`;
+    hint.style.opacity = p < 0.015 ? 1 : 0;
+    const scene = Math.min(SCENES - 1, Math.floor(k));
+    if (scene !== lastScene) {
+      lastScene = scene;
+      railBtns.forEach((b, i) => { b.classList.toggle('is-active', i === scene); b.setAttribute('aria-current', i === scene ? 'step' : 'false'); });
+      sceneNum.textContent = String(scene + 1).padStart(2, '0');
+      sceneName.textContent = FILM.scenes[scene];
+    }
+  }
+
+  function tick() {
+    const target = scrollProgress() * (N - 1);
+    const diff = target - current;
+    const moving = Math.abs(diff) > 0.001;
+    // Ease toward the scroll position for a smooth, weighted, cinematic feel
+    current = reduceMotion || Math.abs(diff) < 0.02 ? target : current + diff * 0.14;
+    if (window.scrollY < filmTop + filmRange + vh && (needsDraw || moving)) {
+      draw(Math.round(current));
+      renderOverlays(current / (N - 1));
+      needsDraw = false;
+    }
+    requestAnimationFrame(tick);
+  }
+
+  railBtns.forEach(b => b.addEventListener('click', () => {
+    const i = Number(b.dataset.go);
+    const top = filmTop + filmRange * (i === 0 ? 0 : (i + 0.4) / SCENES);
+    window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
+  }));
+
+  let resizeRaf = 0;
+  window.addEventListener('resize', () => { cancelAnimationFrame(resizeRaf); resizeRaf = requestAnimationFrame(measure); });
+  measure();
+  requestAnimationFrame(tick);
+
+  /* =========================================================
+     INTRO + VOICEOVER
+     Browsers only allow audio after a tap/click, so the intro's
+     "Enter" button doubles as the start of the voiceover.
+     ========================================================= */
+  const intro = $('#intro'), introBar = $('#introBar'), enterBtn = $('#enterBtn');
+  const audio = $('#voiceover'), soundBtn = $('#soundBtn');
+  let introDone = false, introReady = false;
+
+  const syncSound = () => {
+    const playing = !audio.paused;
+    soundBtn.classList.toggle('is-playing', playing);
+    soundBtn.classList.toggle('pulse', !playing && audio.currentTime === 0 && introDone);
+    soundBtn.setAttribute('aria-pressed', playing);
+    soundBtn.setAttribute('aria-label', playing ? 'Pause voiceover' : 'Play voiceover');
+  };
+  ['play', 'pause', 'ended'].forEach(ev => audio.addEventListener(ev, syncSound));
+  soundBtn.addEventListener('click', () => {
+    if (audio.paused) { if (audio.ended) audio.currentTime = 0; audio.play().catch(() => {}); }
+    else audio.pause();
+  });
+
+  function markReady() {
+    if (introReady) return;
+    introReady = true;
+    introBar.style.transform = 'scaleX(1)';
+    if (location.hash && location.hash.length > 1 && location.hash !== '#top') { closeIntro(false); return; }
+    setTimeout(() => { intro.classList.add('is-ready'); if (!introDone) enterBtn.focus({ preventScroll: true }); }, 350);
+  }
+  function closeIntro(withSound) {
+    if (introDone) return;
+    introDone = true;
+    intro.classList.add('is-gone');
+    root.classList.remove('is-locked');
+    if (withSound) audio.play().catch(() => {});
+    syncSound();
+    measure();
+    if (location.hash && location.hash.length > 1) { const t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
+    ['wheel', 'touchmove', 'keydown'].forEach(ev => window.removeEventListener(ev, skipOnScrollIntent));
+  }
+  function skipOnScrollIntent(e) {
+    if (!introReady) return;
+    if (e.type === 'keydown' && !['ArrowDown', 'PageDown', ' ', 'Spacebar', 'End'].includes(e.key)) return;
+    closeIntro(false);
+  }
+  onProgress = ratio => {
+    introBar.style.transform = `scaleX(${clamp(ratio).toFixed(3)})`;
+    if (ratio >= 1) markReady();
+  };
+  setTimeout(markReady, 4500);   // never keep guests waiting on a slow connection
+  enterBtn.addEventListener('click', () => closeIntro(true));
+  $('#enterMuted').addEventListener('click', () => closeIntro(false));
+  ['wheel', 'touchmove', 'keydown'].forEach(ev => window.addEventListener(ev, skipOnScrollIntent, { passive: true }));
+
+  /* =========================================================
+     NAVBAR, FLOATING BOOK BUTTON, ACTIVE LINKS
+     ========================================================= */
+  const nav = $('#nav'), toggle = $('#navToggle'), fab = $('#fab');
+  let bookingInView = false;
+  const onScroll = () => {
+    const y = window.scrollY;
+    nav.classList.toggle('is-scrolled', y > 40);
+    const pastFilm = y > filmTop + filmRange + vh * 0.4;
+    const show = pastFilm && !bookingInView && !document.body.classList.contains('nav-open');
+    fab.classList.toggle('is-shown', show);
+    fab.setAttribute('aria-hidden', String(!show));
+    fab.tabIndex = show ? 0 : -1;
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const setMenu = open => {
+    document.body.classList.toggle('nav-open', open);
+    root.style.overflow = open ? 'hidden' : '';
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    onScroll();
+  };
+  toggle.addEventListener('click', () => setMenu(!document.body.classList.contains('nav-open')));
+  $$('#navLinks a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && document.body.classList.contains('nav-open')) { setMenu(false); toggle.focus(); } });
+  window.matchMedia('(min-width: 901px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([en]) => { bookingInView = en.isIntersecting; onScroll(); }, { threshold: 0.1 }).observe($('#booking'));
+    const links = $$('#navLinks a:not(.btn)');
+    const spy = new IntersectionObserver(entries => entries.forEach(en => {
+      if (en.isIntersecting) links.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + en.target.id));
+    }), { rootMargin: '-45% 0px -50% 0px' });
+    $$('main section[id]').forEach(s => spy.observe(s));
+  }
+
+  /* ---------- Scroll reveal ---------- */
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }) : null;
+  const observe = el => io ? io.observe(el) : el.classList.add('is-in');
+
+  /* =========================================================
+     GALLERY + LIGHTBOX
+     ========================================================= */
+  const grid = $('#galleryGrid');
+  PHOTOS.forEach((p, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'gallery__item reveal' + (p.tall ? ' gallery__item--tall' : '');
+    btn.dataset.delay = String(i % 3);
+    btn.dataset.caption = p.caption;
+    btn.setAttribute('aria-label', 'Open photo: ' + p.caption);
+    const img = document.createElement('img');
+    img.alt = p.caption; img.loading = 'lazy'; img.decoding = 'async';
+    img.addEventListener('load', () => img.classList.add('is-loaded'));
+    img.src = p.thumb;
+    btn.appendChild(img);
+    btn.addEventListener('click', () => openLb(i));
+    grid.appendChild(btn);
+  });
+  $$('.reveal').forEach(observe);
+
+  const lb = $('#lightbox'), lbImg = $('#lbImg'), lbCap = $('#lbCap'), lbCount = $('#lbCount');
+  let idx = 0, lastFocus = null;
+  const show = i => {
+    idx = (i + PHOTOS.length) % PHOTOS.length;
+    const p = PHOTOS[idx];
+    lbImg.style.opacity = 0;
+    const img = new Image();
+    img.onload = img.onerror = () => { lbImg.src = p.full; lbImg.alt = p.caption; lbImg.style.opacity = 1; };
+    img.src = p.full;
+    lbCap.textContent = p.caption;
+    lbCount.textContent = `${idx + 1} / ${PHOTOS.length}`;
+    new Image().src = PHOTOS[(idx + 1) % PHOTOS.length].full;   // preload next
+  };
+  function openLb(i) {
+    lastFocus = document.activeElement;
+    show(i);
+    lb.classList.add('is-open');
+    lb.setAttribute('aria-hidden', 'false');
+    root.style.overflow = 'hidden';
+    $('#lbClose').focus();
+  }
+  const closeLb = () => {
+    lb.classList.remove('is-open');
+    lb.setAttribute('aria-hidden', 'true');
+    root.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  };
+  $('#lbClose').addEventListener('click', closeLb);
+  $('#lbPrev').addEventListener('click', () => show(idx - 1));
+  $('#lbNext').addEventListener('click', () => show(idx + 1));
+  lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+  document.addEventListener('keydown', e => {
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLb();
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+  let touchX = null;
+  lb.addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', e => {
+    if (touchX === null) return;
+    const dx = e.changedTouches[0].clientX - touchX;
+    if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+    touchX = null;
+  });
+
+  /* =========================================================
+     BOOKING FORM
+     ========================================================= */
+  const form = $('#bookingForm'), ci = $('#checkin'), co = $('#checkout');
+  const estimate = $('#estimate'), formError = $('#formError'), submitBtn = $('#submitBtn');
+  const success = $('#success');
+  const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  const today = new Date(); today.setHours(0, 0, 0, 0);
+  ci.min = iso(today);
+  co.min = iso(new Date(today.getTime() + 864e5));
+
+  // Seasonal nightly rate (USD) for a given night
+  const rateFor = d => {
+    const m = d.getMonth() + 1, day = d.getDate();
+    if ([12, 3, 4, 7, 8].includes(m)) return 150;                         // Peak
+    if ([9, 10, 11, 2].includes(m) || (m === 1 && day >= 10)) return 110; // Low
+    return 130;                                                           // Standard
+  };
+  const parse = v => { const [y, m, d] = v.split('-').map(Number); return new Date(y, m - 1, d); };
+  const updateEstimate = () => {
+    estimate.classList.remove('is-shown');
+    if (!ci.value || !co.value) return;
+    const a = parse(ci.value), b = parse(co.value);
+    const nights = Math.round((b - a) / 864e5);
+    if (nights < 1) return;
+    let sub = 0;
+    for (let i = 0; i < nights; i++) sub += rateFor(new Date(a.getFullYear(), a.getMonth(), a.getDate() + i));
+    estimate.innerHTML = `Estimated total: <strong>$${(sub + 40).toLocaleString()} USD</strong>
+      <small>${nights} night${nights > 1 ? 's' : ''} ($${sub.toLocaleString()}) + $40 cleaning fee. Booking fee not included. Final price confirmed on booking.</small>`;
+    estimate.classList.add('is-shown');
+  };
+  ci.addEventListener('change', () => {
+    if (ci.value) {
+      const next = parse(ci.value); next.setDate(next.getDate() + 1);
+      co.min = iso(next);
+      if (co.value && parse(co.value) <= parse(ci.value)) co.value = '';
+    }
+    updateEstimate();
+  });
+  co.addEventListener('change', updateEstimate);
+
+  const setErr = (input, msg) => {
+    const f = input.closest('.field');
+    f.classList.toggle('is-invalid', !!msg);
+    input.setAttribute('aria-invalid', msg ? 'true' : 'false');
+    f.querySelector('.err').textContent = msg || '';
+    return !msg;
+  };
+  const rules = {
+    name: v => v.trim().length < 2 ? 'Please enter your full name.' : '',
+    email: v => !v.trim() ? 'Please enter your email address.' : (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Please enter a valid email address.'),
+    phone: v => !v.trim() ? 'Please enter your phone number.' : (v.replace(/\D/g, '').length < 7 ? 'Please enter a valid phone number.' : ''),
+    checkin: v => !v ? 'Please choose a check-in date.' : (parse(v) < today ? 'Check-in can’t be in the past.' : ''),
+    checkout: v => !v ? 'Please choose a check-out date.' : (ci.value && parse(v) <= parse(ci.value) ? 'Check-out must be after check-in.' : ''),
+    guests: v => (Number(v) >= 1 && Number(v) <= 8 ? '' : 'Please select the number of guests (1 to 8).')
+  };
+  const validateField = el => setErr(el, rules[el.name](el.value));
+  const validate = () => Object.keys(rules).map(n => validateField(form.elements[n])).every(Boolean);
+  Object.keys(rules).forEach(n => {
+    const el = form.elements[n];
+    el.addEventListener('blur', () => { if (el.value) validateField(el); });
+    ['input', 'change'].forEach(ev => el.addEventListener(ev, () => { if (el.closest('.field').classList.contains('is-invalid')) validateField(el); }));
+  });
+
+  const showSuccess = (name, note) => {
+    $('#successTitle').textContent = `Thank you, ${name.trim().split(/\s+/)[0]}`;
+    const n = $('#successNote');
+    n.hidden = !note; n.textContent = note || '';
+    form.hidden = true;
+    success.classList.add('is-shown');
+    success.focus({ preventScroll: true });
+    success.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+  };
+  $('#anotherBtn').addEventListener('click', () => {
+    form.reset(); estimate.classList.remove('is-shown');
+    success.classList.remove('is-shown'); form.hidden = false;
+    form.elements.name.focus();
+  });
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    formError.classList.remove('is-shown');
+    if (!validate()) {
+      const bad = $('.field.is-invalid input, .field.is-invalid select', form);
+      if (bad) { bad.focus({ preventScroll: true }); bad.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' }); }
+      formError.textContent = 'Please complete the highlighted fields.';
+      formError.classList.add('is-shown');
+      return;
+    }
+    const data = Object.fromEntries(new FormData(form).entries());
+    const fmt = v => parse(v).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+    const summary =
+`Booking request: The Royal View
+
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Check in: ${fmt(data.checkin)}
+Check out: ${fmt(data.checkout)}
+Guests: ${data.guests}
+Special requests: ${data.requests || 'None'}`;
+
+    if (CONFIG.formEndpoint) {
+      submitBtn.disabled = true; submitBtn.textContent = 'Sending…';
+      try {
+        const res = await fetch(CONFIG.formEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: JSON.stringify({ ...data, _subject: 'Booking request: The Royal View', message: summary })
+        });
+        if (!res.ok) throw new Error(res.status);
+        showSuccess(data.name);
+      } catch (err) {
+        formError.textContent = 'Sorry, something went wrong sending your request. Please try again or contact us directly.';
+        formError.classList.add('is-shown');
+      } finally {
+        submitBtn.disabled = false; submitBtn.textContent = 'Request to Book';
+      }
+    } else if (!isPlaceholder(CONFIG.contactEmail)) {
+      window.location.href = `mailto:${CONFIG.contactEmail}?subject=${encodeURIComponent('Booking request: The Royal View')}&body=${encodeURIComponent(summary)}`;
+      showSuccess(data.name, 'Your email app should now open with your request filled in. Just press send.');
+    } else {
+      showSuccess(data.name, 'Note: enquiries will be delivered once the contact email is added to this site.');
+    }
+  });
+})();
+</script>
+</body>
+</html>
