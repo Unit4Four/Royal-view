@@ -170,6 +170,9 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spacin
 .film__progress{position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.12);z-index:3}
 .film__progress span{position:absolute;inset:0;background:linear-gradient(90deg,var(--gold-dark),var(--gold-light));transform-origin:left;transform:scaleX(0)}
 .film__hint{position:absolute;left:50%;bottom:calc(34px + var(--safe-b));transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:12px;color:rgba(255,255,255,.85);font-size:.74rem;letter-spacing:.32em;text-transform:uppercase;white-space:nowrap;transition:opacity .5s;text-shadow:0 1px 8px rgba(0,0,0,.5);pointer-events:none}
+.film__skip{position:absolute;top:calc(var(--nav-h) + 18px);right:clamp(16px,3vw,40px);z-index:4;min-height:44px;padding:0 18px;background:rgba(12,12,12,.35);border:1px solid rgba(201,162,75,.55);color:var(--gold-light);font-size:.72rem;font-weight:400;letter-spacing:.28em;text-transform:uppercase;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:opacity .5s var(--ease),visibility .5s,background .3s,border-color .3s,color .3s}
+.film__skip:hover{background:rgba(201,162,75,.15);border-color:var(--gold);color:var(--white)}
+.film__skip.is-hidden{opacity:0;visibility:hidden}
 .film__hint i{display:block;width:1px;height:46px;background:linear-gradient(var(--gold),transparent);animation:hintLine 2.2s var(--ease) infinite;transform-origin:top}
 @keyframes hintLine{0%{transform:scaleY(0);opacity:1}60%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
 .sound-btn{position:absolute;right:clamp(16px,3vw,40px);bottom:calc(26px + var(--safe-b));z-index:3;display:flex;align-items:center;gap:10px;min-height:48px;background:rgba(12,12,12,.5);border:1px solid var(--line);color:var(--cream);padding:10px 18px 10px 14px;border-radius:40px;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background .3s,border-color .3s}
@@ -190,6 +193,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spacin
   .film__meta .num{font-size:1.9rem}
   .film__meta .name{display:none}
   .film__hint{bottom:calc(150px + var(--safe-b))}
+  .film__skip{top:calc(var(--nav-h) + 12px);padding:0 14px;font-size:.7rem;letter-spacing:.22em}
   .sound-btn .label{display:none}
   .sound-btn{padding:0;width:48px;justify-content:center}
   .scene-cap{padding-bottom:40px}
@@ -394,7 +398,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spacin
   .reveal{opacity:1;transform:none}
 }
 </style>
-<noscript><style>html.is-locked{overflow:auto}.intro{display:none}.film{height:100vh}.film__hint,.film__rail,.film__meta,.sound-btn{display:none}.reveal{opacity:1;transform:none}</style></noscript>
+<noscript><style>html.is-locked{overflow:auto}.intro{display:none}.film{height:100vh}.film__hint,.film__skip,.film__rail,.film__meta,.sound-btn{display:none}.reveal{opacity:1;transform:none}</style></noscript>
 </head>
 <body>
 
@@ -488,6 +492,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spacin
       <li><button data-go="4" aria-label="Scene 5: Kitchen"><span class="lbl">Kitchen</span><span class="tick"></span></button></li>
     </ul>
     <div class="film__meta" aria-hidden="true"><span class="num" id="sceneNum">01</span><span class="of">/ 05</span><span class="name" id="sceneName">The Exterior</span></div>
+    <button class="film__skip" id="filmSkip" type="button" aria-label="Skip intro and go to the main content">Skip Intro</button>
     <div class="film__hint" id="filmHint" aria-hidden="true">Scroll to explore<i></i></div>
     <button class="sound-btn" id="soundBtn" aria-label="Play voiceover" aria-pressed="false">
       <svg class="ic-off"><use href="#i-sound-off"/></svg>
@@ -501,7 +506,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spacin
 
 <main class="content">
 <!-- ================= ABOUT ================= -->
-<section class="section" id="about">
+<section class="section" id="about" tabindex="-1" style="outline:none">
   <div class="container about__grid">
     <div class="about__media reveal">
       <img src="royalview-assets/thumbs/exterior-golden-hour.jpg" alt="The Royal View exterior at golden hour" loading="lazy" decoding="async" width="672" height="900">
@@ -848,7 +853,7 @@ const PHOTOS = [
      SCROLL FILM: frame sequence drawn to canvas, driven by scroll
      ========================================================= */
   const film = $('#top'), canvas = $('#filmCanvas'), ctx = canvas.getContext('2d');
-  const dip = $('#filmDip'), hint = $('#filmHint'), progressBar = $('#filmProgress');
+  const dip = $('#filmDip'), hint = $('#filmHint'), progressBar = $('#filmProgress'), skipBtn = $('#filmSkip');
   const caps = $$('.scene-cap'), railBtns = $$('#filmRail button');
   const sceneNum = $('#sceneNum'), sceneName = $('#sceneName');
   const N = FILM.frames, SCENES = FILM.scenes.length;
@@ -944,6 +949,7 @@ const PHOTOS = [
     // Progress + scene indicator
     progressBar.style.transform = `scaleX(${p.toFixed(4)})`;
     hint.style.opacity = p < 0.015 ? 1 : 0;
+    skipBtn.classList.toggle('is-hidden', p > 0.97);
     const scene = Math.min(SCENES - 1, Math.floor(k));
     if (scene !== lastScene) {
       lastScene = scene;
@@ -972,6 +978,13 @@ const PHOTOS = [
     const top = filmTop + filmRange * (i === 0 ? 0 : (i + 0.4) / SCENES);
     window.scrollTo({ top, behavior: reduceMotion ? 'auto' : 'smooth' });
   }));
+
+  // Skip Intro: jump straight past the film to the main content
+  skipBtn.addEventListener('click', () => {
+    const about = $('#about');
+    window.scrollTo({ top: about.getBoundingClientRect().top + window.scrollY - $('#nav').offsetHeight + 1, behavior: 'instant' });
+    about.focus({ preventScroll: true });
+  });
 
   let resizeRaf = 0;
   window.addEventListener('resize', () => { cancelAnimationFrame(resizeRaf); resizeRaf = requestAnimationFrame(measure); });
@@ -1067,7 +1080,7 @@ const PHOTOS = [
     const spy = new IntersectionObserver(entries => entries.forEach(en => {
       if (en.isIntersecting) links.forEach(a => a.classList.toggle('is-active', a.getAttribute('href') === '#' + en.target.id));
     }), { rootMargin: '-45% 0px -50% 0px' });
-    $$('main section[id]').forEach(s => spy.observe(s));
+    [film, ...$$('main section[id]')].forEach(s => spy.observe(s));   // the film clears the highlight
   }
 
   /* ---------- Scroll reveal ---------- */
