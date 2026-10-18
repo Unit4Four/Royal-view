@@ -130,6 +130,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spacin
   .nav-open .nav__links li:nth-child(4){transition-delay:.15s}
   .nav-open .nav__links li:nth-child(5){transition-delay:.2s}
   .nav-open .nav__links li:nth-child(6){transition-delay:.25s}
+  .nav-open .nav__links li:nth-child(7){transition-delay:.3s}
   .nav-open .nav__cta{opacity:0;pointer-events:none}
 }
 @media (max-width:380px){.nav__cta{padding:10px 14px;letter-spacing:.12em}}
@@ -312,6 +313,20 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spacin
 .contact-line{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:14px;color:var(--ink)}
 .contact-line span{display:inline-flex;align-items:center;gap:8px}
 .contact-line svg{width:18px;height:18px;stroke:var(--gold-dark);fill:none;stroke-width:1.5}
+
+/* ================= AVAILABILITY ================= */
+.availability{max-width:860px;margin:0 auto;background:var(--white);border:1px solid var(--line);box-shadow:0 30px 80px rgba(40,30,15,.08);padding:clamp(40px,6vw,72px) clamp(24px,6vw,72px);text-align:center;position:relative}
+.availability::before{content:"";position:absolute;inset:10px;border:1px solid rgba(201,162,75,.18);pointer-events:none}
+.availability__icon{width:72px;height:72px;margin:0 auto 26px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center}
+.availability__icon svg{width:30px;height:30px;stroke:var(--gold-dark);fill:none;stroke-width:1.4}
+.availability h3{font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:16px}
+.availability h3 em{font-style:italic;color:var(--gold-dark)}
+.availability p{color:var(--muted);max-width:52ch;margin:0 auto}
+.availability__actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:34px;position:relative}
+.availability__actions svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.6}
+.availability__sync{display:inline-flex;align-items:center;gap:10px;margin-top:28px;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-dark)}
+.availability__sync::before{content:"";width:8px;height:8px;border-radius:50%;background:#5d8a4a;box-shadow:0 0 0 4px rgba(93,138,74,.15)}
+@media (max-width:560px){.availability__actions .btn{width:100%}}
 @media (max-width:900px){.booking__wrap{grid-template-columns:1fr}.booking__aside{min-height:300px}}
 @media (max-width:560px){.form-grid{grid-template-columns:1fr}}
 
@@ -444,6 +459,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spacin
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#amenities">Amenities</a></li>
       <li><a href="#pricing">Pricing</a></li>
+      <li class="nav__drawer-only"><a href="#availability">Availability</a></li>
       <li class="nav__drawer-only"><a href="#rules">House Rules</a></li>
       <li class="nav__drawer-only"><a href="#location">Location</a></li>
       <li class="nav__drawer-only"><a href="#booking" class="btn">Book Now</a></li>
@@ -592,6 +608,35 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spacin
       <span>Booking fee applies</span>
       <span>Minimum stay may apply</span>
       <span>All prices in USD</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AVAILABILITY =================
+     Booked dates come from the Airbnb iCal export for listing 42019455:
+       https://www.airbnb.co.uk/calendar/ical/42019455.ics?t=<PRIVATE_TOKEN>
+     The real token is deliberately NOT stored here: this repo is public and the
+     feed includes reservation codes and the last 4 digits of guests' phone numbers.
+     Browsers can't fetch the feed directly (Airbnb sends no CORS headers), so a
+     live calendar needs a server-side step that reads the token from a secret,
+     e.g. a scheduled GitHub Action or serverless function that fetches the .ics,
+     keeps only DTSTART/DTEND date ranges, and publishes them as availability.json.
+     Until then, visitors are sent to the live Airbnb calendar. -->
+<section class="section section--alt" id="availability">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow reveal">Availability</span>
+      <h2 class="reveal" data-delay="1">Check <em>availability</em></h2>
+    </div>
+    <div class="availability reveal">
+      <div class="availability__icon"><svg><use href="#i-cal"/></svg></div>
+      <h3>Plan your <em>perfect stay</em></h3>
+      <p>Our live calendar is on Airbnb, so the dates shown there are always up to date. Find the nights that suit you, then book on Airbnb or send us a direct request below.</p>
+      <div class="availability__actions">
+        <a href="https://www.airbnb.co.uk/rooms/42019455" class="btn" target="_blank" rel="noopener">Check Live Availability on Airbnb <svg><use href="#i-ext"/></svg></a>
+        <a href="#booking" class="btn btn--ghost">Request Dates Direct</a>
+      </div>
+      <span class="availability__sync">Live calendar on Airbnb</span>
     </div>
   </div>
 </section>
@@ -769,6 +814,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spacin
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#amenities">Amenities</a></li>
           <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#availability">Availability</a></li>
           <li><a href="#rules">House Rules</a></li>
           <li><a href="#location">Location</a></li>
           <li><a href="#booking">Book Now</a></li>
